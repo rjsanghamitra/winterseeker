@@ -7,18 +7,19 @@ const path = require("path");
 
 const PORT = process.env.PORT;
 
-app.use(
-  cors({
-    origin: "*"
-  })
-);
+app.use(cors({
+    origin: "https://winterseeker.vercel.app/",
+    methods: ["GET", "POST"],
+    credentials: true,
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/current-weather", current);
 
 app.get("/", (req, res) => {
-  res.send(`PORT ${PORT} CONNECTED`);
+    res.send(`PORT ${PORT} CONNECTED`);
 });
+
 
 app.listen(PORT);
