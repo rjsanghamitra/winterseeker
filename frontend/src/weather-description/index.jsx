@@ -128,7 +128,7 @@ function Description() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginTop: "13rem",
+                marginTop: isNonMobileScreens ? "13rem" : "3rem",
                 height: "0rem",
               }}
             >
