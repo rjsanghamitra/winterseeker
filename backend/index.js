@@ -8,7 +8,7 @@ const path = require("path");
 const PORT = process.env.PORT;
 
 app.use(cors({
-    origin: "https://winterseeker.vercel.app/",
+    origin: "https://winterseeker.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
 }));
