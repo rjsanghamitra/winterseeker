@@ -35,7 +35,7 @@ function Description() {
         );
         setStatus(response.status);
         setCondition(response.data.current.condition.text);
-        setIcon(`https:${response.data.current.condition.icon.substring(2)}`);
+        setIcon(`https:${response.data.current.condition.icon}`);
         setdate(response.data.location.localtime.substring(0, 10));
         setTime(response.data.location.localtime.substring(11));
       })
