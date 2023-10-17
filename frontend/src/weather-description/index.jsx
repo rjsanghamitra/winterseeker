@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, useMediaQuery } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -11,6 +11,7 @@ import HeaderBar from "../headerbar";
 import ProgressBar from "./progress-bar";
 
 function Description() {
+  const isNonMobileScreens = useMediaQuery("(min-width:800px)");
   const location = useSelector((state) => state.location.locationData);
   const [temperature, setTemperature] = useState(null);
   const [humidity, setHumidity] = useState(null);
@@ -61,7 +62,7 @@ function Description() {
           <Grid item xs={12} sm={6}>
             <p
               style={{
-                fontSize: "7rem",
+                fontSize: isNonMobileScreens ? "7rem" : "4rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -73,7 +74,7 @@ function Description() {
             </p>
             <p
               style={{
-                fontSize: "2rem",
+                fontSize: isNonMobileScreens ? "2rem" : "1.5rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -84,12 +85,12 @@ function Description() {
             </p>
             <h3
               style={{
-                fontSize: "1.5rem",
+                fontSize: isNonMobileScreens ? "1.5rem" : "1rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 height: "1rem",
-                marginTop: "10rem",
+                marginTop: isNonMobileScreens ? "10rem" : "5rem",
               }}
             >
               <PlaceIcon />
@@ -97,7 +98,7 @@ function Description() {
             </h3>
             <h5
               style={{
-                fontSize: "1.5rem",
+                fontSize: isNonMobileScreens ? "1.5rem" : "1rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -109,7 +110,7 @@ function Description() {
             </h5>
             <h5
               style={{
-                fontSize: "1.5rem",
+                fontSize: isNonMobileScreens ? "1.5rem" : "1rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -123,7 +124,7 @@ function Description() {
           <Grid item xs={12} sm={6}>
             <p
               style={{
-                fontSize: "2rem",
+                fontSize: isNonMobileScreens ? "2rem" : "1.5rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -146,7 +147,7 @@ function Description() {
             </p>
             <p
               style={{
-                fontSize: "1.5rem",
+                fontSize: isNonMobileScreens ? "1.5rem" : "1.25rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
